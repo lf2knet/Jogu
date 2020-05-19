@@ -12,16 +12,21 @@ class Board:
         pass
 
 class Player:
-    def __init__(self,opt:class):
-        self.health = 30
-        self.morale = 30
+    def __init__(self,faction:str):
+        self.morale = 23
         self.win = 0
         self.hand = list()
         self.field_deck = [1,1,2,2,3,3,4,4,5,5,6,6]
         self.current_field = 0
         self.deck = list()
         self.graveyard = list()
-        self.faction = opt
+        
+        if faction == 'Society of Engineers':
+            self.faction = Engineers()
+        elif faction == 'Guards of Keion':
+            self.faction = Guards()
+        elif faction == 'Tribe Wu':
+            self.faction = Wu()
         
     def hand_draw(self):
         n = 7 - len(self.hand)
@@ -41,14 +46,19 @@ class Player:
     def deploy(self):
         card =  input('選擇一張你想要打的牌')
 
-class Engineers():
-    def __init__(self,opt):
-        if opt == 'Society of Engineers':
-            pass
-            
-        elif opt == 'Guards of Keion':
-            self.element['Guardian Agel'] = [2,1]
+class Faction():
+    def __init__():
+        pass
+    def 
+
+class Engineers(Faction):
+    def __init__(self):
+        pass
         
-        elif opt == 'Tribe Wu':
-            pass
+class Guards(Faction):
+    def __init__(self):
+        pass
         
+class Wu(Faction):
+    def __init__(self):
+        pass
